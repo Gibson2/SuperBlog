@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
 
   devise_for :users, controllers: {
-    registrations: 'users/resistrations'
+    registrations: 'users/registrations'
   }
 
   resources :posts do
     resources :comments, only: [:create]
   end
 
+  resources :users
 
   get 'comments/create'
 

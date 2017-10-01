@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   def filter_admin!
   	authenticate_user!
-  	redirect_to root_path, alert: "No tienes acceso"
+  	redirect_to root_path, alert: "No tienes acceso" unless current_user.admin?
   end
 end
