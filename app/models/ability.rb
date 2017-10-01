@@ -7,9 +7,9 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
-      elsif
+      elsif user.guest?
         can :read, :all
-        can :create, :post
+        can :create, Post
         can [:edit, :destroy], [Post, Comment], user_id: user_id
       else
         cam :read, :all

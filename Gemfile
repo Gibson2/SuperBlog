@@ -63,6 +63,9 @@ group :development, :test do
 
   gem 'binding_of_caller'
 
+  #Protector de clave
+  gem 'dotenv-rails'
+
 end
 
 group :development do
