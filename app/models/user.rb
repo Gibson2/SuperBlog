@@ -13,4 +13,6 @@ class User < ApplicationRecord
 	def default_role
 		self.role ||= 0
 	end
+
+  enum role: {admin: 1, normal: 0, guest: 2}
 end
